@@ -20,7 +20,7 @@ apiClient.interceptors.response.use(
   }
 );
 
-// Tipagem das funções com base no tipo de retorno e parâmetros
+// Tipagem das funções com base no tipo de retorno e parâmetros PQP EM
 export const postData = async <T>(url: string, data: T): Promise<any> => {
   try {
     const rawData = toRaw(data);
