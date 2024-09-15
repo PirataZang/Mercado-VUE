@@ -1,0 +1,20 @@
+.operators{
+    display: flex;
+    margin: 20px 20px 20px 0px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+
+    .opBTN{
+        border: 2px solid white;
+        height: 35px;
+        border-radius: 5px;
+        font-size: 15px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+
+        &:hover{
+        }
+    }
+}

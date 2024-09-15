@@ -1,0 +1,55 @@
+.inputField {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 5px 10px;
+    flex-direction: column;
+
+    
+    .inputLabel {
+        top: 10px;
+        padding-left: 12px;
+        position: relative;
+        color: unset;
+    }
+
+    .bar{
+        width: 0%;
+        top: -10px;
+        position: relative;
+        height: 1px;
+        background: transparent;
+        transition: all 0.7s ease-in-out;
+    }
+
+    .inputValue {
+        height: 35px;
+        text-decoration: solid;
+        padding-left: 8px;
+        border-radius: 5px;
+        outline: none;
+        color: rgb(148, 148, 148);
+        background: rgba(0, 0, 0, 0.1098039216);
+        border: none;
+        transition: all 0.7s ease-in-out;
+
+        &:focus{
+            color: white;
+        }
+
+        &:focus ~ .bar {
+            width: 100%;
+            background: white;
+        }
+
+        &.search {
+            background: white;
+            color: black !important;
+
+            &:focus ~ .bar {
+                width: 0%;
+            }
+        }
+    }
+}

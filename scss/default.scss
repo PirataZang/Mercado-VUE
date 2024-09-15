@@ -1,0 +1,83 @@
+@import url(products/_productsList.scss);
+@import url(_grid.scss);
+@import url(_operators.scss);
+@import url(Fields/_aInput.scss);
+@import url(Fields/_aButtons.scss);
+@import url(Fields/_aSelect.scss);
+
+#app {
+    max-width: 100%;
+    padding: 2rem 3rem 2rem 12rem;
+    font-weight: normal;
+
+    // COLORS
+    .bg-red {
+        background-color: red;
+    }
+    .bg-white {
+        background-color: white;
+    }
+
+    // Busca
+    .searchField{
+        display: flex;
+        align-items: center;
+    
+        .searchButton {
+            position: relative;
+            top: -5px;
+        }
+    }
+
+    // Conteúdo
+    .content {
+        background: #232323;
+        padding: 15px;
+        border-radius: 8px;
+        min-width: 500px;
+
+        .contentFields {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .required{
+            box-shadow: 0px 0px 14px -4px red;
+        }
+    }
+
+    .actions{
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    left: 25px;
+    border-radius: 7px;
+    position: absolute;
+    border: 2px solid white;
+    height: 100%;
+    top: 10px;
+    padding: 10px;
+
+    .routes {
+        display: flex;
+        flex-direction: column;
+        a {
+            text-decoration: none;
+            color: #fff;
+            font-family: "Roboto", sans-serif;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 10px 15px;
+            transition:
+                color 0.3s ease,
+                background-color 0.3s ease;
+        }
+    }
+}

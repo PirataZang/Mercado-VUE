@@ -1,0 +1,29 @@
+.selectField {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .selectLabel {
+        padding-left: 12px;
+        position: relative;
+        color: unset;
+    }
+
+    .optionField {
+        height: 35px;
+        text-decoration: solid;
+        padding-left: 8px;
+        border-radius: 5px;
+        outline: none;
+        color: rgb(148, 148, 148);
+        background: rgb(30 30 30);
+        border: none;
+        transition: all 0.7s ease-in-out;
+
+        &:focus{
+            color: white;
+        }
+
+
+    }
+}
