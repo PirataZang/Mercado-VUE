@@ -1,4 +1,4 @@
-// apiClient.ts
+// apiClient.js
 import axios from 'axios';
 import { toRaw } from 'vue';
 
@@ -13,52 +13,51 @@ const apiClient = axios.create({
 
 // Interceptor de resposta para tratamento global de erros
 apiClient.interceptors.response.use(
-  (response) => response,
-  (error: any) => {
+  response => response,
+  error => {
     console.error('Erro global de API:', error);
     return Promise.reject(error);
   }
 );
 
-// Tipagem das funções com base no tipo de retorno e parâmetros
-export const postData = async <T>(url: string, data: T): Promise<any> => {
+export const postData = async (url, data) => {
   try {
     const rawData = toRaw(data);
     const response = await apiClient.post(url, rawData);
     return response.data;
-  } catch (error: any) {
+  } catch (error) {
     throw new Error(`Erro ao enviar dados: ${error.message}`);
   }
 };
 
-export const getData = async (url: string): Promise<any> => {
+export const getData = async (url) => {
   try {
     const response = await apiClient.get(url);
     return response.data;
-  } catch (error: any) {
+  } catch (error) {
     throw new Error(`Erro ao obter dados: ${error.message}`);
   }
 };
 
-export const putData = async <T>(url: string, data: T): Promise<any> => {
+export const putData = async (url, data) => {
   try {
     const response = await apiClient.put(url, data);
     return response.data;
-  } catch (error: any) {
+  } catch (error) {
     throw new Error(`Erro ao enviar dados: ${error.message}`);
   }
 };
 
-export const deleteData = async (url: string): Promise<any> => {
+export const deleteData = async (url, data) => {
   try {
-    const response = await apiClient.delete(url);
+    const response = await apiClient.delete(url, data);
     return response.data;
-  } catch (error: any) {
-    throw new Error(`Erro ao deletar dados: ${error.message}`);
+  } catch (error) {
+    throw new Error(`Erro ao Deletar dados: ${error.message}`);
   }
 };
 
-// Definição do objeto 'api'
+
 const api = {
   postData,
   getData,
@@ -67,3 +66,4 @@ const api = {
 };
 
 export default api;
+
